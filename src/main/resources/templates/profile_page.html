@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Личный кабинет</title>
+    <div th:replace="~{head}"></div>
+</head>
+
+<body>
+<div class="container">
+    <div th:replace="~{header :: navigation(User)}" />
+
+    <hr>
+    <div class="content">
+        <h1 class="storeName">Пользователь:</h1>
+        <br>
+        <div class="textOnCenter">
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>Имя</td>
+                    <td>Почта</td>
+                    <td>Телефон</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="us, iter : ${user.findAllByEmail()}">
+                    <td th:text="${us.getFullName()}"></td>
+                    <td th:text="${us.getEmail()}"></td>
+                    <td th:text="${us.getPhone()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div th:replace="~{footer}"></div>
+</body>
+</html>
