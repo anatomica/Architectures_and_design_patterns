@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<VBox prefHeight="400.0" prefWidth="600.0"
+      xmlns="http://javafx.com/javafx/8.0.112"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Homework_7.controller.Controller">
+
+    <children>
+        <HBox prefWidth="200.0">
+            <children>
+                <Button mnemonicParsing="false" text="Refresh" onAction="#refreshData" />
+                <Button mnemonicParsing="false" text="InsertData" onAction="#insertData" />
+            </children></HBox>
+        <TableView fx:id="orderTable" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="typeColumn" prefWidth="200.0" text="TYPE" />
+                <TableColumn fx:id="startDateColumn" prefWidth="199.0" text="START DATE" />
+                <TableColumn fx:id="statusColumn" prefWidth="140.0" text="STATUS" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
